@@ -6,4 +6,5 @@ import java.util.List;
 public class ServicoConsumidor {
     private static List<Consumidor> consumidores = new ArrayList<>();
 
+
 }
