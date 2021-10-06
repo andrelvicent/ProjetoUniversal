@@ -33,8 +33,8 @@ public class Consumidor {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("Nome: " +nome);
-        retorno.append("Email: " +email);
+        retorno.append("\n Nome: " +nome);
+        retorno.append("\n Email: " +email);
         return retorno.toString();
     }
 }
