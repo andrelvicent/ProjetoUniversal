@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -14,7 +15,8 @@ public class Sistema {
         System.out.println("Seja bem vindo a empresa ficticia Universal");
         System.out.println("Digite 1 - para cadastrar um consumidor. ");
         System.out.println("Digite 2 - para cadastrar uma fatura. ");
-        System.out.println("Digite 3 - para sair. ");
+        System.out.println("Digite 3 - consultar faturas de um consumidor");
+        System.out.println("Digite 4 - para sair. ");
     }
 
     public static Consumidor cadastrarConsumidor() throws Exception{
@@ -29,6 +31,13 @@ public class Sistema {
         String dataDeVencimento = capturarDados("Digite a data de vencimento: ").nextLine();
 
         return ServicoFatura.cadastrarFatura(email, valor, dataDeVencimento);
+    }
+
+    public static List<Fatura> pesquisarFatura() throws Exception{
+        String email = capturarDados("Digite o email do consumidor: ").nextLine();
+        ServicoConsumidor.validarEmail(email);
+        List<Fatura> faturas = ServicoFatura.pesquisarFaturaPeloEmailConsumidor(email);
+        return faturas;
     }
 
 }
