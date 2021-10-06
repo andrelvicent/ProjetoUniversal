@@ -17,7 +17,7 @@ public class Sistema {
         System.out.println("Digite 3 - para sair. ");
     }
 
-    public static Consumidor cadastrarConsumidor(){
+    public static Consumidor cadastrarConsumidor() throws Exception{
         String nome = capturarDados("Digite o nome do consumidor: ").nextLine();
         String email = capturarDados("Digite o email do consumidor: ").nextLine();
         return ServicoConsumidor.cadastrarConsumidor(nome, email);
