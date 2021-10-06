@@ -23,4 +23,12 @@ public class Sistema {
         return ServicoConsumidor.cadastrarConsumidor(nome, email);
     }
 
+    public static Fatura cadastrarFatura() throws Exception{
+        String email = capturarDados("Digite o email do consumidor: ").nextLine();
+        double valor = capturarDados("Digite o valor da fatura: ").nextDouble();
+        String dataDeVencimento = capturarDados("Digite a data de vencimento: ").nextLine();
+
+        return ServicoFatura.cadastrarFatura(email, valor, dataDeVencimento);
+    }
+
 }
