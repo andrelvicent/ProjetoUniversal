@@ -40,4 +40,30 @@ public class Sistema {
         return faturas;
     }
 
+    public static boolean executar() throws Exception{
+        boolean continuarMenu = true;
+
+        while (continuarMenu){
+            menu();
+            int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
+            // Cadastrar consumidor
+            if (opcaoDoUsuario == 1){
+                Consumidor consumidor = cadastrarConsumidor();
+                System.out.println(consumidor);
+            } else if(opcaoDoUsuario == 2){
+                Fatura fatura = cadastrarFatura();
+                System.out.println(fatura);
+            }else if(opcaoDoUsuario == 3){
+                List<Fatura> faturas = pesquisarFatura();
+                System.out.println("Quantidade de faturas: " +faturas.size());
+                System.out.println(faturas);
+            }else if(opcaoDoUsuario == 4){
+                continuarMenu = false;
+            }else{
+                System.out.println("Opção inválida. Digite novamente. ");
+            }
+        }
+        return continuarMenu;
+    }
+
 }
